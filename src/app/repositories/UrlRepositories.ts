@@ -16,9 +16,7 @@ export default class UrlRepository {
   async getUrlByOriginalUrl(originalUrl: string): Promise<IUrl | null> {
     return await this.UrlModel.findOne({ originalUrl }).lean();
   }
-  async getAllUrls(): Promise<IUrl | null> {
-    console.log("typoe", typeof this.UrlModel.find().lean());
-
+  async getAllUrls(): Promise<IUrl[] | null> {
     return await this.UrlModel.find().lean();
   }
   async deleteUrl(id: string): Promise<IUrl | null> {

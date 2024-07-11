@@ -1,18 +1,23 @@
 import { URLShortnerService } from "@/app/services/urlShortnerService";
+import { IUrl } from "@/models/Url";
 import { NextResponse } from "next/server";
 import { cache } from "react";
-
-const fetchURls = cache(async () => {
+type URLData = IUrl[] | null;
+const fetchURls = cache(async (): Promise<URLData> => {
   try {
     const shortenerService = new URLShortnerService();
-    const res = await shortenerService.getAllUrls();
+    const res: URLData = await shortenerService.getAllUrls();
     return res;
   } catch (error) {
-    return error;
+    throw new Error(error as string);
   }
 });
 
 export async function GET() {
-  const urls = await fetchURls();
-  return NextResponse.json({ urls });
+  try {
+    const urls: URLData = await fetchURls();
+    return NextResponse.json({ urls: urls });
+  } catch (error) {
+    throw new Error(error as string);
+  }
 }
