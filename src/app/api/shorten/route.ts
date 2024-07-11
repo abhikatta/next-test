@@ -1,4 +1,4 @@
-import { URLShortnerService } from "@/app/services/urlShortnerService";
+import { URLShortnerService } from "@/services/urlShortnerService";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {

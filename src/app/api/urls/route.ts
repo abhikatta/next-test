@@ -1,4 +1,4 @@
-import { URLShortnerService } from "@/app/services/urlShortnerService";
+import { URLShortnerService } from "@/services/urlShortnerService";
 import { IUrl } from "@/models/Url";
 import { NextResponse } from "next/server";
 import { cache } from "react";
