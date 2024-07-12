@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FormNames } from "./constants";
+import { FormNames, Paths } from "../constants";
 import { shortenUrl } from "@/serverActions/ShortenUrlAction";
 
 const ShortUrl = () => {
@@ -18,7 +18,7 @@ const ShortUrl = () => {
             Submit
           </button>
         </form>
-        <Link href={"/urls"}>
+        <Link href={Paths.urls}>
           <button type="button" className=" mt-10 w-fit justify-center btn btn-outline">
             Show Urls
           </button>

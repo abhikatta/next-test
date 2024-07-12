@@ -1,3 +1,4 @@
+import { Paths } from "@/constants";
 import { IUrl } from "@/models/Url";
 import Link from "next/link";
 
@@ -19,7 +20,7 @@ const UrlList = async () => {
   return (
     <div className=" flex flex-col min-h-screen justify-center bg-gray-100">
       <div className=" flex flex-col justify-center">
-        <Link href={"/"} className=" m-4 p-4 ml-[20%] w-fit group">
+        <Link href={Paths.home} className=" m-4 p-4 ml-[20%] w-fit group">
           <button className="text-black group-hover:underline">Go To Home</button>
         </Link>
       </div>
@@ -45,7 +46,7 @@ const UrlList = async () => {
                           <td className="text-black">{url.originalUrl}</td>
                           <td>
                             <a
-                              href={`/urls/${url.shortUrl}`}
+                              href={`${Paths.urls}/${url.shortUrl}`}
                               target="_blank"
                               className=" link link-primary"
                             >{`${process.env.NEXT_PUBLIC_BASE_URL}/${url.shortUrl}`}</a>

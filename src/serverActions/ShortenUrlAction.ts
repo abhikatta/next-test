@@ -1,4 +1,4 @@
-import { FormNames } from "@/app/constants";
+import { FormNames } from "@/constants";
 import { URLShortnerService } from "@/services/urlShortnerService";
 
 export const shortenUrl = async (formData: FormData) => {
