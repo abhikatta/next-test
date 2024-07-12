@@ -10,6 +10,6 @@ export async function POST(req: Request) {
       shorUrl,
     });
   } catch (error) {
-    return error;
+    throw new Error(error as string);
   }
 }
